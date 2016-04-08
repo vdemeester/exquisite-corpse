@@ -1,0 +1,20 @@
+version: '3.1'
+
+services:
+  front:
+    build: web
+    image: dockerdemos/lab-web
+    ports: ["80:80"]
+
+  back:
+    build: words-java
+    image: dockerdemos/lab-words-java
+    deploy:
+      resources:
+        limits:
+          memory: 64M
+        reservations:
+          memory: 64M
+
+  mongo:
+    image: mongo:3.3.8
