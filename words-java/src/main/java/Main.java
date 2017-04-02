@@ -58,7 +58,7 @@ public class Main {
     private static Jongo createJongo() {
         DB db = new MongoClient("mongo:27017", new MongoClientOptions.Builder()
                 .serverSelectionTimeout(2000)
-                .build()).getDB("lab-docker");
+                .build()).getDB("lab-docker-v2");
 
         return new Jongo(db);
     }
